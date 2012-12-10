@@ -3,6 +3,7 @@
 *.swp
 *~.nib
 build/
+bin/
 
 *.pbxuser
 *.perspective
