@@ -16,24 +16,26 @@ void testApp::setup(){
 //--------------------------------------------------------------
 void testApp::update(){
    
-    if (on == true){
-        boids->flock();
-        if (mode == 'a') {
-            boids->arrive(target);
-        }
-        else if (mode == 'f') {
-            boids->flee(target);
-        }
-        else if (mode == 'e') {
-            boids->explode();
-            mode = 0;
-        }
-        boids->update();
-        boids->bounce();
-    }
+    
     
     timeCounter = timeCounter + D;
     if (timeCounter > 1){
+    
+        if (on == true){
+            boids->flock();
+            if (mode == 'a') {
+                boids->arrive(target);
+            }
+            else if (mode == 'f') {
+                boids->flee(target);
+            }
+            else if (mode == 'e') {
+                boids->explode();
+                mode = 0;
+            }
+            boids->update();
+            boids->bounce();
+        }
         
         tick = true;
         timeCounter = D;
